@@ -17,9 +17,19 @@ provides_tools:
 requires_env:
   - name: RADICALE_URL
     description: Base URL of the Radicale CalDAV server.
+    prompt: Radicale server URL
     url: https://radicale.org
+    password: false
   - name: RADICALE_USERNAME
     description: Radicale account username.
+    prompt: Radicale username
+    password: false
   - name: RADICALE_PASSWORD
     description: Radicale password or app password.
+    prompt: Radicale password
     secret: true
+optional_env:
+  - name: RADICALE_TIMEZONE
+    description: IANA timezone used for offset-free input and displayed event times.
+    prompt: Radicale timezone (for example America/New_York)
+    password: false

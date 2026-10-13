@@ -26,7 +26,19 @@ hermes plugins doctor ~/.hermes/plugins/radicale-calendar --install-deps
 hermes plugins enable radicale-calendar
 ```
 
-The plugin installer prompts for `RADICALE_URL`, `RADICALE_USERNAME`, and
-`RADICALE_PASSWORD`. Set the optional `RADICALE_TIMEZONE` to an IANA timezone
-(such as `Europe/Amsterdam` or `America/New_York`) to accept offset-free local
-timestamps and return event timestamps in that timezone.
+`hermes plugins install` prompts for `RADICALE_URL`, `RADICALE_USERNAME`, and
+`RADICALE_PASSWORD`; it also offers the optional `RADICALE_TIMEZONE`. Set the
+timezone to an IANA name (such as `Europe/Amsterdam` or
+`America/New_York`) to accept offset-free local timestamps and return event
+timestamps in that timezone.
+
+Hermes currently exposes these manifest fields during plugin installation, not
+in the toolset-provider configuration drawer. For a manually copied plugin,
+set the values in `~/.hermes/.env` before enabling it:
+
+```dotenv
+RADICALE_URL=https://calendar.example.com/
+RADICALE_USERNAME=your-username
+RADICALE_PASSWORD=your-password
+RADICALE_TIMEZONE=America/New_York
+```
