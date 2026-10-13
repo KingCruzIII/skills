@@ -1,0 +1,15 @@
+[project]
+name = "radicale-calendar-cli"
+version = "0.1.0"
+description = "CalDAV CLI for a self-hosted Radicale calendar"
+requires-python = ">=3.10"
+dependencies = [
+  "caldav>=3.2.1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
