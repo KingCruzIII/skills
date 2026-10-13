@@ -86,9 +86,14 @@ class CalendarClientTests(unittest.TestCase):
     def test_registers_all_tools_and_guidance_skill(self) -> None:
         registered_tools: list[str] = []
         registered_skills: list[tuple[str, Path]] = []
+        test_case = self
 
         class Context:
             def register_tool(self, **kwargs) -> None:
+                test_case.assertEqual(
+                    kwargs["requires_env"],
+                    ["RADICALE_URL", "RADICALE_USERNAME", "RADICALE_PASSWORD"],
+                )
                 registered_tools.append(kwargs["name"])
 
             def register_skill(self, name: str, path: Path) -> None:

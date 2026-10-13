@@ -31,6 +31,8 @@ _TOOLS = (
     ("radicale_delete_event", DELETE_EVENT_SCHEMA, handle_delete_event),
 )
 
+_REQUIRED_ENV = ("RADICALE_URL", "RADICALE_USERNAME", "RADICALE_PASSWORD")
+
 
 def register(ctx) -> None:
     """Register Radicale calendar tools and their operating guidance."""
@@ -41,5 +43,6 @@ def register(ctx) -> None:
             schema=schema,
             handler=handler,
             check_fn=check_requirements,
+            requires_env=list(_REQUIRED_ENV),
         )
     ctx.register_skill("calendar-guidance", Path(__file__).parent / "skills" / "calendar-guidance")
