@@ -1,0 +1,25 @@
+name: radicale-calendar
+version: 1.0.0
+description: Manage self-hosted Radicale CalDAV calendars and events.
+author: KingCruzIII
+kind: standalone
+platforms:
+  - linux
+  - macos
+  - windows
+provides_tools:
+  - radicale_list_calendars
+  - radicale_list_events
+  - radicale_create_event
+  - radicale_reschedule_event
+  - radicale_update_event
+  - radicale_delete_event
+requires_env:
+  - name: RADICALE_URL
+    description: Base URL of the Radicale CalDAV server.
+    url: https://radicale.org
+  - name: RADICALE_USERNAME
+    description: Radicale account username.
+  - name: RADICALE_PASSWORD
+    description: Radicale password or app password.
+    secret: true

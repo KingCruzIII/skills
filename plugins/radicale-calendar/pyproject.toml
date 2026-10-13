@@ -1,7 +1,7 @@
 [project]
-name = "radicale-calendar-cli"
-version = "0.1.0"
-description = "CalDAV CLI for a self-hosted Radicale calendar"
+name = "radicale-calendar-plugin"
+version = "1.0.0"
+description = "Hermes plugin for a self-hosted Radicale CalDAV calendar"
 requires-python = ">=3.10"
 dependencies = [
   "caldav>=3.2.1",
